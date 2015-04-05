@@ -447,12 +447,6 @@
     var randomIndex;
     var copiedArray = array.slice();
 
-    while (copiedArray.length > 0) {
-      randomIndex = Math.floor(Math.random() * (copiedArray.length));
-      shuffledArray.push(copiedArray[randomIndex]);
-      copiedArray.splice(randomIndex, 1);
-    }
-
     var arrayEquals = function (arr1, arr2) {
       var i;
       for (i = 0; i < arr1.length; i+=1) {
@@ -462,6 +456,14 @@
       }
       return true;
     };
+    
+    while (copiedArray.length > 0) {
+      randomIndex = Math.floor(Math.random() * (copiedArray.length));
+      shuffledArray.push(copiedArray[randomIndex]);
+      copiedArray.splice(randomIndex, 1);
+    }
+
+    
 
     if (arrayEquals(array, shuffledArray)) {
       return _.shuffle(array);
